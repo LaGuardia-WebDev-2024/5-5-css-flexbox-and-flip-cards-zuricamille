@@ -1,21 +1,87 @@
-<!--Lesson Goals: 
-Copy Code From w3 Schools
-Add Flexbox to get items on same line
-Play with justify-content
-Comment Out Code Command + / 
+<!-- Unit 5 Project
+Requirements
+[  ] <div> and <span>
+[  ] height: and width:
+[  ] margin: and padding: 
+[  ] Three Images
+
+Select ONE Additional Feature to Add  
+[ no ] Feature 1 - Flexbox
+[ yes ] Feature 2 - Flip Card
+[ no ] Feature 3 - Navbar
+[ no ] Feature 4 - Shaking Animation
+[ no ] Feature 5 - Gradient Background
+[ no ] Feature 6 - Spotify Playlist
 -->
+
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Unit 5 Project</title>
     <meta charset="utf-8" />
-    <title>Unit 4 - Flexbox</title>
     <style>
- 
+    .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
     </style>
   </head>
   <body>
-    <h1>Jungle Animals</h1>
-
-   
+    <h1>Christmas Celebration</h1>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            src="https://discovernyc.tours/wp-content/uploads/2023/04/Bryant-Park-Winter-Village-NYC-Fountain.jpg"
+            alt="Avatar"
+            style="width: 300px; height: 300px"
+          />
+        </div>
+        <div class="flip-card-back">
+          <h1>Bryant Park Christmas Market</h1>
+          <p>Come Celebrate!</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
